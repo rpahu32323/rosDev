@@ -1,0 +1,12 @@
+
+{
+    
+    "name": "ros-devcontainer",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+
+    "remoteUser": "rosdev",
+    "containerUser": "rosdev"
+
+}
