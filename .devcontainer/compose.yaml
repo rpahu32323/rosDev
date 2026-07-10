@@ -11,18 +11,13 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        - USERNAME=rosdev
-        - USER_UID=${UID}
-        - USER_GID=${UID}
-
-    # enviroment variables
-    environment:
-      WAYLAND_DISPLAY: ${WAYLAND_DISPLAY}
+        - USERNAME=${USERNAME}
+        - USER_UID=${USER_UID}
+        - USER_GID=${USER_GID}
 
     # local maching mappings
     volumes:
       - ..:/workspace/rosWork
-      - /run/user/${UID}/${WAYLAND_DISPLAY}:/run/user/${UID}/${WAYLAND_DISPLAY}
 
     # command to keep the container running
     command: sleep infinity

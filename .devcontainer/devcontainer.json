@@ -5,7 +5,7 @@
     "dockerComposeFile": "compose.yaml",
     "service": "roswork",
 
-    "remoteUser": "rosdev",
+    "initializeCommand": "echo \"USERNAME=$USER\nUSER_UID=$(id --user $USER)\nUSER_GID=$(id --group $USER)\n\" > .devcontainer/.env",
 
     "workspaceFolder": "/workspace/rosWork"
 }
