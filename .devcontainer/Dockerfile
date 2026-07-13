@@ -21,15 +21,15 @@ RUN apt-get update \
 
 # set up sshd
 RUN apt-get install -y \
-    openssh-server 
+    openssh-client \
+    openssh-server \
+    && echo "ListenAddress 127.0.0.1:9922" > /etc/ssh/sshd_config.d/99-listen-locally.conf
 
 # additional general packages
 RUN apt-get install -y \
     vim \
-    htop \
     tmux \
-    iproute2 \
-    x11-apps
+    iproute2
 
 # additional ros packages
 RUN apt-get install -y \
@@ -44,3 +44,7 @@ USER $USERNAME
 
 # set the ros environment variables automatically when opening a new shell
 RUN echo "source /opt/ros/lyrical/setup.bash" >> /home/$USERNAME/.bashrc
+
+# run sshd
+CMD ["sudo", "/usr/sbin/sshd", "-D", "-e"]
+

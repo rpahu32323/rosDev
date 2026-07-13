@@ -34,6 +34,3 @@ services:
     volumes:
       - ..:/workspace/rosWork
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
-
-    # command to keep the container running
-    command: sleep infinity
