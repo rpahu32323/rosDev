@@ -6,6 +6,14 @@
     "service": "roswork",
 
     "initializeCommand": "echo \"USERNAME=$USER\nUSER_UID=$(id --user $USER)\nUSER_GID=$(id --group $USER)\n\" > .devcontainer/.env",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode-remote.remote-containers",
+                "ms-azuretools.vscode-containers",
+            ]
+        }
+    },
 
     "workspaceFolder": "/workspace/rosWork"
 }
