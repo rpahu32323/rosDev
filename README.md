@@ -1,1 +1,1 @@
-Project for experimenting with ROS.
+Base project for working with ROS in a dev container.
